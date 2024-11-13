@@ -12,65 +12,33 @@ public class TesteCalculadora {
 		Calculadora calculadora = new Calculadora();
 		Scanner sc = new Scanner(System.in);
 
-		int opcao;
-		float num1, num2;
+		int operador;
 
 		do {
 
-			System.out.println("+--------------------------------------------+");
-			System.out.println("|                 Calculadora                |");
-			System.out.println("|--------------------------------------------|");
-			System.out.println("|                                            |");
-			System.out.println("|       Digite 1 Inicar A Calculadora        |");
-			System.out.println("|                     OU                     |");
-			System.out.println("|        0 Para Fechar a Calculadora         |");
-			System.out.println("|                                            |");
-			System.out.println("+--------------------------------------------+");
+			menuOperador();
+			operador = sc.nextInt();
 
-			opcao = sc.nextInt();
-			switch (opcao) {
+			switch (operador) {
 			case 1 -> {
-				menuOperador();
-				int operador  = sc.nextInt();
-				
-				switch(operador) {
-				case 1->{
-					System.out.println("+--------------------------------------------+");
-					System.out.println("|                 Calculadora                |");
-					System.out.println("|--------------------------------------------|");
-					System.out.println("|         Informe o Primeiro valor:          |");
-					System.out.println("|                                            |");
-					num1 = sc.nextFloat();
-					System.out.println("|                                            |");
-					System.out.println("|         Informe o Segundo valor:           |");
-					System.out.println("|                                            |");
-					num2 = sc.nextFloat();
-				}
-				case 2->{
-					
-				}
-				case 3->{
-					
-				}
-				case 4->{
-					
-				}
-				default->{
-					
-				}
-				}
-				
+				calculadora.somar();
 			}
-			case 0 -> {
-
+			case 2 -> {
+				calculadora.subtrair();
+			}
+			case 3 -> {
+				calculadora.dividir();
+			}
+			case 4 -> {
+				calculadora.multiplicar();
 			}
 			default -> {
-				System.out.println("Opção inválida!");
+
 			}
 			}
 
-		} while (opcao != 0);
-
+		} while (operador != 0);
+		sc.close();
 	}
 
 	public static void keyPress() {
@@ -81,19 +49,22 @@ public class TesteCalculadora {
 			System.out.println("Você pressionou uma tecla diferente de enter!");
 		}
 	}
+
 	public static void menuOperador() {
-		System.out.println("+--------------------------------------------+");
-		System.out.println("|                 Calculadora                |");
-		System.out.println("|--------------------------------------------|");
-		System.out.println("|                                            |");
-		System.out.println("|        Qual operação deseja realizar?      |");
-		System.out.println("|                                            |");
-		System.out.println("|              [1] - Soma                    |");
-		System.out.println("|              [2] - Subtração               |");
-		System.out.println("|              [3] - Divsão                  |");
-		System.out.println("|              [4] - Multiplicação           |");
-		System.out.println("|                                            |");
-		System.out.println("+--------------------------------------------+");
+		System.out.println(" +--------------------------------------------+ ");
+		System.out.println(" |                 Calculadora                | ");
+		System.out.println(" |--------------------------------------------| ");
+		System.out.println(" |                                            | ");
+		System.out.println(" |        Qual operação deseja realizar?      | ");
+		System.out.println(" |                                            | ");
+		System.out.println(" |              [1] - Soma                    | ");
+		System.out.println(" |              [2] - Subtração               | ");
+		System.out.println(" |              [3] - Divsão                  | ");
+		System.out.println(" |              [4] - Multiplicação           | ");
+		System.out.println(" |              [0] - Sair                    | ");
+		System.out.println(" |                                            | ");
+		System.out.println(" +--------------------------------------------+ ");
+
 	}
-	
+
 }
